@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Receipt</title>
+	<style>
+		.receipt {
+			border: 1px solid black;
+			padding: 10px;
+			margin: 10px;
+			width: 50%;
+			font-family: Arial, sans-serif;
+			text-align: center;
+			background-color: #f2f2f2;
+		}
+		.receipt:hover {
+			background-color: #d9d9d9;
+		}
+		.receipt h2 {
+			color: #006699;
+			font-size: 24px;
+		}
+		.receipt p {
+			font-size: 18px;
+			margin-bottom: 10px;
+		}
+		.receipt .success {
+			color: green;
+			font-weight: bold;
+		}
+		.receipt .failure {
+			color: red;
+			font-weight: bold;
+		}
+		.receipt button {
+			background-color: #006699;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			font-size: 18px;
+			border-radius: 5px;
+			margin-top: 10px;
+			cursor: pointer;
+		}
+		.receipt button:hover {
+			background-color: #004c66;
+		}
+	</style>
+</head>
+<body>
+	<div class="receipt">
+		<h2>Payment Receipt</h2>
+		<p>Transaction ID: {{ transaction_id }}</p>
+		<p>Date: {{ date }}</p>
+		<p>Time: {{ time }}</p>
+		<p>Sender Account: {{ sender_account }}</p>
+		<p>Receiver Account: {{ receiver_account }}</p>
+		<p>Amount: ${{ amount }}</p>
+		{% if payment_status == 'successful' %}
+			<p class="success">Payment Status: Successful &#x2714;</p>
+		{% else %}
+			<p class="failure">Payment Status: Declined &#x2718;</p>
+		{% endif %}
+		<button onclick="window.print()">🖨️ Print Receipt </button>
+	</div>
+</body>
+</html>

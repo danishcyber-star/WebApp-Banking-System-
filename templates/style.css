@@ -1,0 +1,33 @@
+body {
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 48px;
+    color: #0077b6;
+    text-align: center;
+  }
+  
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 30px;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444444;
+    text-align: justify;
+  }
+  

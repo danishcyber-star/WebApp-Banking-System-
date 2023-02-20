@@ -1,0 +1,37 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+<title>Banking Application</title>
+{% endblock %}
+
+{% block content %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <body>
+    <h1>Welcome to the Banking Application</h1>
+    <div>
+      <h2>Accounts</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody id="accounts-body">
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h2>Transfer Funds</h2>
+      <form id="transfer-form">
+        <div>
+          <label for="sender-id">Sender ID:</label>
+          <input type="number" id="sender-id" name="sender_id" required>
+        </div>
+        <div>
+          <label for="recipient-id">Recipient ID:</label>
+          <input type="number" id="recipient-id" name="recipient_id" required>
+        </div>
+        {% endblock %}

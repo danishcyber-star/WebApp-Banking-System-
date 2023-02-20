@@ -1,0 +1,53 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+<title>Account Management</title>
+{% endblock %}
+
+{% block content %}
+    <title>Account Management</title>
+  </head>
+  <body>
+    <h1>Account Management</h1>
+    
+    <!-- Display account balance -->
+    <h2>Account Balance: $500.00</h2>
+    
+    <!-- Display transaction history -->
+    <h2>Transaction History</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022-01-01</td>
+          <td>Deposit</td>
+          <td>$500.00</td>
+        </tr>
+        <tr>
+          <td>2022-01-15</td>
+          <td>Withdrawal</td>
+          <td>$100.00</td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- Manage account settings -->
+    <h2>Account Settings</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="Update">
+    </form>
+  </body>
+  {% endblock %}

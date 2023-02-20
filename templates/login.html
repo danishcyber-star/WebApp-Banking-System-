@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #90EE90;
+        }
+
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background-color: #FFFF00;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px #000;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #000;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px #000000;
+            color: #FF0000;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            color: #000;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #000;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #32CD32;
+        }
+
+        a {
+            color: #000;
+            text-decoration: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        .watermark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.3;
+            z-index: -1;
+            font-size: 5rem;
+            text-align: center;
+            color: #FF0000;
+            text-shadow: 2px 2px #000000;
+            transform: rotate(-45deg);
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .page-footer {
+            background-color: #f2f2f2;
+            color: #555;
+            text-align: center;
+            padding: 20px;
+      }
+
+      /* Style for the social media icons */
+      .social-media {
+        font-size: 24px;
+        margin: 0 10px;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="form-container">
+            <h2>Al-Danish Bank</h2>
+            <div style="background-color: #FFFF00; padding: 10px;">
+                <marquee behavior="scroll" direction="left">Wish you have a Good Day</marquee>
+            </div>
+            <h1>Login</h1>
+            <div class="watermark">Al-Danish Bank</div>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <input type="text" name="username" placeholder="Username">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" value="Login">
+            </form>
+
+            <a href="{{ url_for('register') }}">Don't have an account? Sign Up</a>
+        </div>
+    </div>
+    <footer class="text-center text-white " style="background-color: #d4d2d2;">
+        <!-- Grid container -->
+        <div class="container pt-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/DANISHA36291730" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-google"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/danish-alam-838181162/!" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                <!-- Github -->
+                <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/danishcyber-star" role="button"
+                    data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center text-light p-3" style="background-color: rgba(3, 36, 67, 0.504);">
+            © 2022 Copyright:
+            <a class="text-light" href="https://danish.ai/">iDanish Intelligence Pvt Limited</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+{% extends 'header.html' %}
+
+{% block head %}
+
+<title>Payment Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_online.css') }}">
+{% endblock %}
+
+{% block content %}
+
+	<style>
+		.form-group {
+			margin-bottom: 20px;
+		}
+		.form-group label {
+			display: block;
+			margin-bottom: 5px;
+		}
+		.form-group input {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			font-size: 16px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+		.error-message {
+			color: red;
+			margin-top: 5px;
+		}
+	</style>
+	<script>
+		function validateForm() {
+			var senderAccount = document.forms["paymentForm"]["senderAccount"].value;
+			var receiverAccount = document.forms["paymentForm"]["receiverAccount"].value;
+			var amount = document.forms["paymentForm"]["amount"].value;
+			
+			if (senderAccount == "" || receiverAccount == "" || amount == "") {
+				alert("Please fill out all fields.");
+				return false;
+			}
+			
+			if (isNaN(amount)) {
+				alert("Amount must be a number.");
+				return false;
+			}
+			
+			return true;
+		}
+	</script>
+</head>
+<body>
+	<h1>Payment Form</h1>
+	<form name="paymentForm" method="POST" action="/submit" onsubmit="return validateForm()">
+		<div class="form-group">
+			<label for="senderAccount">Sender Account Number:</label>
+			<input type="text" id="senderAccount" name="senderAccount">
+			<span class="error-message"></span>
+		</div>
+		<div class="form-group">
+			<label for="receiverAccount">Receiver Account Number:</label>
+			<input type="text" id="receiverAccount" name="receiverAccount">
+			<span class="error-message"></span>
+		</div>
+		<div class="form-group">
+			<label for="amount">Payment Amount:</label>
+			<input type="text" id="amount" name="amount">
+			<span class="error-message"></span>
+		</div>
+		<input type="submit" value="Submit">
+	</form>
+</body>
+ {% endblock %}
